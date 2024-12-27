@@ -30,13 +30,17 @@ export default async function Home() {
         <form action={createUser}>
           <Card>
             <CardHeader>
-              <CardTitle>Create User</CardTitle>
-              <CardDescription>Create a new user</CardDescription>
+              <CardTitle>Create new user</CardTitle>
             </CardHeader>
             <CardContent className="flex flex-col gap-2">
-              <Input placeholder="Name" name="name" type="text" required />
-              <Input placeholder="Email" name="email" type="email" required />
-              <Input placeholder="Age" name="age" type="number" required />
+              <Input placeholder="louay" name="name" type="text" required />
+              <Input
+                placeholder="louay@gmail.com"
+                name="email"
+                type="email"
+                required
+              />
+              <Input placeholder="18?" name="age" type="number" required />
               <Button type="submit">Create</Button>
             </CardContent>
           </Card>
