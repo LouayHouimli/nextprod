@@ -4,6 +4,7 @@ import { usersTable } from "@/db/schema";
 import { db } from "@/db/drizzle";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
+import { eq } from "drizzle-orm";
 interface User {
   name: string;
   age: number;
@@ -24,5 +25,10 @@ export const createUser = async (formData: FormData) => {
     age: parseInt(formData.get("age") as string),
     email: formData.get("email") as string,
   });
+  revalidatePath("/");
+};
+
+export const deleteUser = async (id: number) => {
+  await db.delete(usersTable).where(eq(usersTable.id, id));
   revalidatePath("/");
 };

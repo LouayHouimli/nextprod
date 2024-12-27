@@ -2,6 +2,7 @@ import { createUser } from "@/actions/user.actions";
 import Image from "next/image";
 import { db } from "@/db/drizzle";
 import { usersTable } from "@/db/schema";
+import DeleteBtn from "@/components/delete-btn";
 
 export default async function Home() {
   const users = await db.select().from(usersTable);
@@ -35,7 +36,10 @@ export default async function Home() {
       </form>
       <div>
         {users.map((user) => (
-          <div key={user.id}>{user.name}</div>
+          <div key={user.id} className="px-2 py-1 flex items-center">
+            {user.name}
+            <DeleteBtn id={user.id} />
+          </div>
         ))}
       </div>
     </div>
