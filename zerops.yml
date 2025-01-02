@@ -12,7 +12,7 @@ zerops:
         - npm run build
 
       # select which files / folders to deploy
-      # after the build successfully finished
+      # after the build successfully finishe
       deployFiles:
         - dist
         - package.json
