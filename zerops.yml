@@ -18,7 +18,7 @@ zerops:
         - package.json
         - node_modules
 
-      # *optional*: which files / folders
+      # *optional*: whifiles / folders
       # to cache for the next build run
       cache:
         - node_modules
