@@ -24,7 +24,7 @@ zerops:
         - node_modules
         - package-lock.json
 
-    # ==== how to run your application ====
+    # ==== how to ru your application ====
     run:
       # what technology should the runtime
       # container be based on, can be extended
