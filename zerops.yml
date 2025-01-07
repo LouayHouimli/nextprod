@@ -12,19 +12,19 @@ zerops:
         - npm run build
 
       # select which files / folders to deploy
-      # after the build successfully finishe
+      # after the build successfully finished
       deployFiles:
         - dist
         - package.json
         - node_modules
 
-      # *optional*: whifiles / folders
+      # *optional*: which files / folders
       # to cache for the next build run
       cache:
         - node_modules
         - package-lock.json
 
-    # ==== how to ru your application ====
+    # ==== how to run your application ====
     run:
       # what technology should the runtime
       # container be based on, can be extended
