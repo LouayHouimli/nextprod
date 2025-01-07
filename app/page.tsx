@@ -24,6 +24,7 @@ import {
 import { useForm } from "react-hook-form";
 export default async function Home() {
   const users = await db.select().from(usersTable);
+  console.log("hello from here")
   return (
     <>
       <div className="flex flex-col items-center gap-y-4  justify-center h-screen w-[500px] mx-auto">
