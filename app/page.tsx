@@ -48,8 +48,9 @@ export default async function Home() {
         </form>
         {users.map((user) => (
           <div key={user.id} className="flex flex-col">
-            <div>{user.name}</div>
-            <div>{user.email}</div>
+            <div>Username : {user.name}</div>
+            <div>Email : {user.email}</div>
+             <div>Age : {user.age}</div>
             <DeleteBtn id={user.id} />
           </div>
         ))}
