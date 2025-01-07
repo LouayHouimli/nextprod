@@ -1,5 +1,5 @@
 zerops:
-  - setup: app
+  - setup: app1
     # ==== how to build your application ====
     build:
       # what technologies should the build
