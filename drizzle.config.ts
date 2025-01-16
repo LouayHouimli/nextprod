@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 // Load environment variables from .env file
 dotenv.config();
 console.log("Database URL : ", process.env.DATABASE_URL);
+console.log(process.env.projectId);
 
 export default defineConfig({
   out: "./drizzle",
