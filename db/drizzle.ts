@@ -1,9 +1,9 @@
 import { drizzle } from "drizzle-orm/node-postgres";
 import { Pool } from "pg";
 
-// Create a PostgreSQL connection pool
+
 const pool = new Pool({
-  connectionString: "postgresql://postgresql0:E9qJdNxs031dvVnA@postgresql0:5432/postgresql0",
+  connectionString: process.env.DATABASE_URL,
 });
 
 // Create the drizzle database instance
