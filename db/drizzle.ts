@@ -6,5 +6,5 @@ const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
 });
 
-// Create the drizzle database instance!
+// Create the drizzlle database instance!
 export const db = drizzle(pool);
