@@ -2,23 +2,30 @@ zerops:
   - setup: app
     build:
       base: nodejs@20
-      envVariables:
-        DATABASE_URL: ${db_connectionString}
       buildCommands:
         - npm i
         - npm run build
+        # install deps for runtime migrations
+        - npm install drizzle-kit drizzle-orm postgres
       deployFiles:
         - .next
         - package.json
         - node_modules
         - public
+        # folder that contains migration files 
+        # example: https://github.com/spartan-ng/spartan/tree/main/apps/app/drizzle
+        - drizzle
+        # drizzle config for migrations
+        # example: https://github.com/spartan-ng/spartan/blob/main/tools/scripts/drizzle-migrate.config.ts
+        - drizzle-migrate.config.ts
       cache:
         - node_modules
-        - package-lock.json
     run:
       base: nodejs@20
       envVariables:
-        DATABASE_URL: ${db_connectionString}
+        DATABASE_URL: ${db_connectionString}/${db_dbName}
+      initCommands:
+        - zsc execOnce $appVersionId -- drizzle-kit migrate --config=drizzle-migrate.config.ts
       ports:
         - port: 3000
           httpSupport: true
