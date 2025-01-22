@@ -1,6 +1,6 @@
 zerops:
   - setup: app
-    # ==== how to build your application ====
+    # ==== how to build you application ====
     build:
       # what technologies should the build
       # container be based on (can be an array)
