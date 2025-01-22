@@ -17,7 +17,7 @@ zerops:
         - drizzle
         # drizzle config for migrations
         # example: https://github.com/spartan-ng/spartan/blob/main/tools/scripts/drizzle-migrate.config.ts
-        - drizzle-migrate.config.ts
+        - drizzle.config.ts
       cache:
         - node_modules
     run:
