@@ -25,7 +25,7 @@ zerops:
       envVariables:
         DATABASE_URL: ${db_connectionString}/${db_dbName}
       initCommands:
-        - zsc execOnce $appVersionId -- drizzle-kit migrate --config=drizzle-migrate.config.ts
+        - zsc execOnce $appVersionId -- drizzle-kit migrate --config=drizzle.config.ts
       ports:
         - port: 3000
           httpSupport: true
